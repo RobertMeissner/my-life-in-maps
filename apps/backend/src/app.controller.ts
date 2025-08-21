@@ -14,7 +14,7 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  @Get("places")
+  @Get('places')
   getPlaces(): Place[] {
     return this.locationService.getLocations();
   }
