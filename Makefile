@@ -1,7 +1,10 @@
 
+setup:
+	bash -c "source ~/.nvm/nvm.sh && nvm use node"
 
 run:
-	bash -c "source ~/.nvm/nvm.sh && nvm use node && pnpm dev:python"
+	docker-compose down
+	pnpm dev:python
 
 
 run-nestjs:
