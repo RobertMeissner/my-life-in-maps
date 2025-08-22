@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+    backend-nestjs:
+      profiles: ["nestjs"]
+      build: ./apps/backend
+      ports: ["3000:3000"]
+
+    backend-python:
+      profiles: ["python"]
+      build: ./apps/backend-python
+      ports: ["3000:8000"]
+
+    #frontend:
+    #  build: # ./apps/frontend
+    #    context: .
+    #    dockerfile: Dockerfile.frontend
+    #  ports: ["5173:5173"]
+    #  environment:
+    #    - VITE_API_BASE_URL=http://localhost:3000
