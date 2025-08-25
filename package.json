@@ -7,7 +7,7 @@
   ],
   "scripts": {
     "dev": "concurrently \"pnpm run dev:backend\" \"pnpm run dev:frontend\"",
-    "dev:nestjs": "concurrently \"docker-compose --profile nestjs up --build\" \"pnpm --filter frontend run dev\"",
+    "dev:nestjs": "concurrently \"pnpm run dev:backend\" \"pnpm --filter frontend run dev\"",
     "dev:python": "concurrently \"docker-compose --profile python up --build\" \"pnpm --filter frontend run dev\"",
     "dev:backend": "pnpm --filter ./apps/backend run start:dev",
     "dev:frontend": "pnpm --filter frontend run dev",
