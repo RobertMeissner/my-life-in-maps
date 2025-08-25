@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { KmlFileSystemService } from '../../infrastructure/services/kml-file-system.service';
+import { Place } from '../../domain/entities/place.entity';
 
 @Injectable()
 export class KmlFileProcessingService {
@@ -11,5 +12,10 @@ export class KmlFileProcessingService {
     const parsedData = content;
     const validatedData = parsedData;
     return validatedData;
+  }
+
+  parseKmlToPlaces(kmlContent: string): Promise<Place[]> {
+    console.log(`parseKmlToPlaces ${kmlContent}`);
+    return Promise.resolve([]);
   }
 }
