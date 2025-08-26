@@ -32,8 +32,9 @@ describe('KmlFileProcessingService', () => {
   });
 
   it('should parse KML objects to Place objects', async () => {
-    const kmlContent = `<Placemark><name>Test</name><Point><coordinates>7.6,51.9</coordinates></Point></Placemark>`;
+    const kmlContent = `<Document><Placemark><name>Test</name><Point><coordinates>7.6,51.9</coordinates></Point></Placemark></Document>`;
     const places = await service.parseKmlToPlaces(kmlContent);
     expect(places).toHaveLength(1);
+    expect(places[0].latitude).toBeCloseTo(51.9);
   });
 });

@@ -8,13 +8,13 @@
   "scripts": {
     "dev": "concurrently \"pnpm run dev:backend\" \"pnpm run dev:frontend\"",
     "dev:nestjs": "concurrently \"pnpm run dev:backend\" \"pnpm --filter frontend run dev\"",
-    "dev:python": "concurrently \"docker-compose --profile python up --build\" \"pnpm --filter frontend run dev\"",
+    "dev:python": "concurrently \"docker-compose --profile python up --build\" \"pnpm --filter ./apps/frontend run dev\"",
     "dev:backend": "pnpm --filter ./apps/backend run start:dev",
-    "dev:frontend": "pnpm --filter frontend run dev",
+    "dev:frontend": "pnpm --filter ./apps/frontend run dev",
     "build": "pnpm run build:backend && pnpm run build:frontend",
-    "build:backend": "pnpm --filter backend run build",
-    "build:frontend": "pnpm --filter frontend run build",
-    "test": "pnpm --filter backend run test && pnpm --filter frontend run test"
+    "build:backend": "pnpm --filter ./apps/backend run build",
+    "build:frontend": "pnpm --filter ./apps/frontend run build",
+    "test": "pnpm --filter ./apps/backend run test && pnpm --filter ./apps/frontend run test"
   },
   "devDependencies": {
     "concurrently": "^7.6.0"
