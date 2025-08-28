@@ -1,0 +1,21 @@
+meta {
+  name: places
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{backend}}/places
+  body: none
+  auth: inherit
+}
+
+assert {
+  res.status: eq 200
+  res.body: isArray
+  res.body: isEmpty
+}
+
+settings {
+  encodeUrl: true
+}
