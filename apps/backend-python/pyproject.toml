@@ -8,4 +8,6 @@ dependencies = [
     "fastapi>=0.116.1",
     "granian>=2.5.0",
     "reload>=0.9",
+    "pytest>=8.0.0",
+    "httpx>=0.27.0",
 ]
